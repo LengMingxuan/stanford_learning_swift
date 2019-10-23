@@ -22,6 +22,8 @@ class ViewController: UIViewController/*父类*/ {
     
     var emojiChoices: Array<String> = ["😂","😁","😂","😁"]
     
+    
+    
     /*方法*/
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
