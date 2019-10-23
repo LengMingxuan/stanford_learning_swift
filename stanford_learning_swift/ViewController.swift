@@ -24,6 +24,7 @@ class ViewController: UIViewController/*父类*/ {
     
     
     
+    
     /*方法*/
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
