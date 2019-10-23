@@ -9,16 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController/*父类*/ {
-    var flipCount: Int = 0
+    var flipCount: Int = 0{
+        didSet{//'didset‘可以让此属性在用到他的时候执行didset内的指令
+            flipCountLabel.text = "点击: \(flipCount)"//每次‘flipCount’变量的数据发生改变时都会执行Label的内容加一
+        }
+        
+    }
     
     @IBOutlet weak var flipCountLabel: UILabel!
     
+    @IBOutlet var cardButtons: [UIButton]!
+    
+    var emojiChoices: Array<String> = ["😂","😁","😂","😁"]
     
     /*方法*/
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
-        flipCountLabel.text = "点击: \(flipCount)"
-        flipCard(withEmoji: "😄", on: sender)
+        if let cardNumber = cardButtons.index(of: sender){
+            flipCard(withEmoji: emojiChoices[cardNumber], on: sender)
+        }
+        else{
+            print("Choose card was not in cardButtons")
+        }
+        
     }
     
     func flipCard(withEmoji emoji: String, on button: UIButton){
