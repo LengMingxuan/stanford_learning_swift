@@ -5,7 +5,7 @@
 
 ## NOTE
 
-### 1.didset
+### 1.didset[->](https://github.com/LengMingxuan/stanford_learning_swift/blob/master/stanford_learning_swift/ViewController.swift)
 ```SWIFT
 didset{
 //'didset‘可以让此属性在用到他的时候执行didset内的指令
